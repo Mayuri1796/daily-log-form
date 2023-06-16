@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <div class="form-header">
+              <div class="col-12">
+                <h1>Daily Log</h1>
+              </div>
+            </div>
+            <!-- Form  -->
+            <form id="myForm">
+              <div class="row">
+                <div class="col-6">
+                  <label>Name</label>
+                  <div class="mb-4"> <input class="form-control" type="text" required></div>
+                </div>
+                <div class="col-6">
+                  <label>Email Address</label>
+                  <div class="mb-4"> <input class="form-control" type="email" required></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <label>Date</label>
+                  <div class="mb-4"> <input class="form-control" type="date" required></div>
+                </div>
+                <!-- <div class="col-6">
+                  <label>What role did you perform?</label>
+                  <div class="mb-4"> <select id="inputState" class="form-control" required>
+                      <option value="" selected hidden></option>
+                      <option value="">A</option>
+                      <option value="">B</option>
+                      <option value="">C</option>
+                      <option value="">D</option>
+                      <option value="">E</option>
+                    </select></div>
+                </div> -->
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <h2>TASK</h2>
+                </div>
+                <!-- <div class="col-2">
+                  <p id="count"></p>
+                </div> -->
+              </div>
+              <div class="col-12">
+                <label>Which Client did you work on?</label>
+                <div class="wrapper">
+                  <div class="select-btn">
+                    <span>Select Country</span>
+                    <i class="uil uil-angle-down"></i>
+                  </div>
+                  <div class="content">
+                    <div class="search">
+                      <i class="uil uil-search"></i>
+                      <input spellcheck="false" type="text" placeholder="Search">
+                    </div>
+                    <ul class="options"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label>What task did you perform?</label>
+                <div class="mb-4"> <select class="js-states form-control" name="selecttask" id="selecttask" required>
+                    <option value="" selected hidden></option>
+                    <option value="1" data-state="client1">Engagement Story</option>
+                    <option value="2" data-state="client2">Instagram Post</option>
+                    <option value="3" data-state="client1">Facebook Post</option>
+                    <option value="4" data-state="client3">LinkedIn Post</option>
+                    <option value="5" data-state="client1">Caption</option>
+                    <option value="6" data-state="client3">Social Media Calendar</option>
+                    <option value="7" data-state="client2">Social Media Deck compilation</option>
+                    <option value="8" data-state="client3">Research</option>
+                    <option value="9" data-state="client3">Competitor analysis</option>
+                    <option value="10" data-state="client3">Campaign</option>
+                    <option value="11" data-state="client3">Insight Mining</option>
+                    <option value="12" data-state="client3">Meeting - Client</option>
+                    <option value="13" data-state="client3">Meeting - Internal</option>
+                    <option value="14" data-state="client3">Meeting - Design</option>
+                    <option value="15" data-state="client3">Google Ad</option>
+                    <option value="16" data-state="client3">Reel Script</option>
+                    <option value="17" data-state="client3">Video Script</option>
+                    <option value="18" data-state="client3">Website Page</option>
+                    <option value="19" data-state="client3">Website Banner</option>
+                    <option value="20" data-state="client3">Blog post</option>
+                    <option value="21" data-state="client3">Feedback</option>
+                    <option value="22" data-state="client3">Break</option>
+                  </select></div>
+              </div>
+              <div class="row">
+                <label>How long did it take you?</label>
+                <div class="col-6">
+                  <div class="mb-4"> <select class="form-control" required>
+                      <option value="" selected hidden>Hour</option>
+                      <option>1hr</option>
+                      <option>2hrs</option>
+                      <option>3hrs</option>
+                      <option>4hrs</option>
+                      <option>5hrs</option>
+                      <option>6hrs</option>
+                      <option>7hrs</option>
+                      <option>8hrs</option>
+                    </select></div>
+                </div>
+                <div class="col-6">
+                  <div class="min"> <select class="form-control" required>
+                      <option value="" selected hidden>Minute</option>
+                      <option>15 mins</option>
+                      <option>30mins</option>
+                      <option>45mins</option>
+                    </select></div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label>Add Comments</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div id="formcont"></div>
+              <div class="row mt-4">
+                <div class="col-md-4 col-12">
+                  <div class="form-btn"> <button class="submit-btn" id="addtask" onclick="btn()">Add Task</button>
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-btn"> <button class="submit-btn" onclick="SubForm()">Submit</button> </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-btn"> <button class="submit-btn" onclick="saveFile()">Save</button> </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- API for excel -->
+  <script>
+    function SubForm() {
+      $.ajax({
+        url: "https://api.apispreadsheets.com/data/pHb8FyanB67fnn1s/",
+        type: "post",
+        data: $("#myForm").serializeArray(),
+        success: function () {
+          alert("Form Data Submitted :)")
+        },
+        error: function () {
+          alert("There was an error :(")
+        }
+      });
+    }
+  </script>
+
+  <!-- Dependent Dropdown -->
+  <!-- <script>
+    var $selectState = $('#selectclient'),
+      $selectDistrict = $('#selecttask'),
+      $options = $selectDistrict.find('option');
+
+    $selectState.on('change', function () {
+      $selectDistrict.html($options.filter('[data-state="' + this.value + '"]'));
+    }).trigger('change');
+  </script> -->
+
+  <!-- Dropdown -->
+  <script>
+    const wrapper = document.querySelector(".wrapper"),
+      selectBtn = wrapper.querySelector(".select-btn"),
+      searchInp = wrapper.querySelector("input"),
+      options = wrapper.querySelector(".options");
+
+    let countries = ["Afghanistan", "Algeria", "Argentina", "Australia", "Bangladesh", "Belgium", "Bhutan",
+      "Brazil", "Canada", "China", "Denmark", "Ethiopia", "Finland", "France", "Germany",
+      "Hungary", "Iceland", "India", "Indonesia", "Iran", "Italy", "Japan", "Malaysia",
+      "Maldives", "Mexico", "Morocco", "Nepal", "Netherlands", "Nigeria", "Norway", "Pakistan",
+      "Peru", "Russia", "Romania", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland",
+      "Thailand", "Turkey", "Uganda", "Ukraine", "United States", "United Kingdom", "Vietnam"];
+
+    function addCountry(selectedCountry) {
+      options.innerHTML = "";
+      countries.forEach(country => {
+        let isSelected = country == selectedCountry ? "selected" : "";
+        let li = `<li onclick="updateName(this)" class="${isSelected}">${country}</li>`;
+        options.insertAdjacentHTML("beforeend", li);
+      });
+    }
+    addCountry();
+
+    function updateName(selectedLi) {
+      searchInp.value = "";
+      addCountry(selectedLi.innerText);
+      wrapper.classList.remove("active");
+      selectBtn.firstElementChild.innerText = selectedLi.innerText;
+    }
+
+    searchInp.addEventListener("keyup", () => {
+      let arr = [];
+      let searchWord = searchInp.value.toLowerCase();
+      arr = countries.filter(data => {
+        return data.toLowerCase().startsWith(searchWord);
+      }).map(data => {
+        let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
+        return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
+      }).join("");
+      options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Oops! Country not found</p>`;
+    });
+
+    selectBtn.addEventListener("click", () => wrapper.classList.toggle("active"));
+  </script>
+</body>
+
+</html>
